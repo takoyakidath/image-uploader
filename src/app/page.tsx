@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -11,6 +12,7 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<div className="min-h-screen bg-gradient-to-b from-gray-100 to-white dark:from-gray-900 dark:to-gray-800">
+			<Header />
 			<main className="container mx-auto px-4 py-12 text-center">
 				<TypographyH1 className="mb-6 text-primary">
 					画像共有の新しいカタチ
