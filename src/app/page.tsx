@@ -1,12 +1,12 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
+	CardDescription,
 	CardHeader,
 	CardTitle,
-	CardDescription,
 } from "@/components/ui/card";
 import { TypographyH1, TypographyP } from "@/components/ui/typography";
+import Link from "next/link";
 
 export default function Home() {
 	return (
@@ -14,7 +14,7 @@ export default function Home() {
 			<header className="container mx-auto p-4">
 				<nav className="flex justify-between items-center">
 					<div className="flex items-center space-x-4">
-						<div className="w-10 h-10 bg-primary rounded-full"></div>
+						<div className="w-10·h-10·bg-primary·rounded-full" />
 						<span className="text-2xl font-bold text-primary">ImageShare</span>
 					</div>
 					<Button asChild>
