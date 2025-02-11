@@ -61,7 +61,7 @@ export function SiginupForm({
 			</Card>
 			<div className="text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-primary">
 				By clicking continue, you agree to our{" "}
-				<a href="/privacy">Privacy Policy</a>.
+				<a href="/terms">Terms of service</a>.
 			</div>
 		</div>
 	);

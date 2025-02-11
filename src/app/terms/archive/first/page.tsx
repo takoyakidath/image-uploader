@@ -13,11 +13,11 @@ export default function Page() {
 			<Card>
 				<Card>
 					<CardHeader>
-						<CardTitle>Privacy Policy</CardTitle>
+						<CardTitle>Terms of service</CardTitle>
 						<CardDescription>Last Modified: 11 Feb 2025</CardDescription>
 						<CardDescription>
 							Previous Version:{" "}
-							<Link href="/privacy/archive/first">
+							<Link href="/terms/archive/first">
 								First{/*普通は日付を入れる*/}
 							</Link>
 						</CardDescription>

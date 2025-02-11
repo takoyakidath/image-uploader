@@ -11,18 +11,6 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<div className="min-h-screen bg-gradient-to-b from-gray-100 to-white dark:from-gray-900 dark:to-gray-800">
-			<header className="container mx-auto p-4">
-				<nav className="flex justify-between items-center">
-					<div className="flex items-center space-x-4">
-						<div className="w-10·h-10·bg-primary·rounded-full" />
-						<span className="text-2xl font-bold text-primary">ImageShare</span>
-					</div>
-					<Button asChild>
-						<Link href="/login">ログイン</Link>
-					</Button>
-				</nav>
-			</header>
-
 			<main className="container mx-auto px-4 py-12 text-center">
 				<TypographyH1 className="mb-6 text-primary">
 					画像共有の新しいカタチ

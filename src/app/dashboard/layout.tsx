@@ -1,4 +1,4 @@
-import Header from "@/components/header";
+import HeaderDath from "@/components/header";
 import SideBar from "@/components/sidebar";
 type Props = {
 	children: React.ReactNode;
@@ -8,7 +8,7 @@ const MainLayout = ({ children }: Props) => {
 	return (
 		<>
 			<div className="bg-slate-500 ">
-				<Header />
+				<HeaderDath />
 			</div>
 
 			<SideBar />
