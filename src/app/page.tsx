@@ -50,10 +50,6 @@ export default function Home() {
           />
         </div>
       </main>
-
-      <footer className="container mx-auto p-4 text-center text-muted-foreground">
-        <p>&copy; 2023 ImageShare. All rights reserved.</p>
-      </footer>
     </div>
   )
 }
