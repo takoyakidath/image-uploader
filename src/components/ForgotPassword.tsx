@@ -1,8 +1,3 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/ZkNfy536AMa
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -17,7 +12,7 @@ export default function ForgotPassword() {
             Forgot your password?
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
-            Enter the email address associated with your account and we'll send you a link to reset your password.
+            Enter the email address associated with your account and we&apos;ll send you a link to reset your password.
           </p>
         </div>
         <form className="space-y-6" action="#" method="POST">
@@ -33,7 +28,7 @@ export default function ForgotPassword() {
         </form>
         <div className="flex justify-center">
           <Link
-            href="#"
+            href="/login"
             className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
             prefetch={false}
           >
