@@ -24,7 +24,9 @@ export function HeaderDath() {
 				<div className="flex items-center space-x-4">
 					<div className="w-10·h-10·bg-primary·rounded-full" />
 					<span className="text-2xl font-bold text-primary">
-						<Link href="/">ImageShare</Link>
+						<Button>
+							<Link href="/">ImageShare</Link>
+						</Button>
 					</span>
 				</div>
 			</nav>
