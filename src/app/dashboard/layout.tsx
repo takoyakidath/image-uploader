@@ -1,4 +1,4 @@
-import HeaderDath from "@/components/header";
+import HeaderDath from "@/components/dashheader";
 import SideBar from "@/components/sidebar";
 type Props = {
 	children: React.ReactNode;

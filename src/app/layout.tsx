@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Image Uploader",
@@ -15,9 +16,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				{children}
-				<footer className="container mx-auto p-4 text-center text-muted-foreground">
-					<p>&copy; 2023 ImageShare. All rights reserved.</p>
-				</footer>
+				<Footer />
 			</body>
 		</html>
 	);
