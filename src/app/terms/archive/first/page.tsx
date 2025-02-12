@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function Page() {
 	return (
 		<>
-			<Card>
+			<Card className="">
 				<Card>
 					<CardHeader>
 						<CardTitle>Terms of service</CardTitle>
@@ -29,8 +29,7 @@ export default function Page() {
 							information, including but not limited to unauthorized access,
 							hacking, or unintended data exposure.
 						</p>
-
-						<h3>Image Management</h3>
+						<h3>mage Management</h3>
 						<p>
 							We are not responsible for any leakage of images uploaded by
 							users, whether due to system vulnerabilities, third-party
@@ -39,17 +38,6 @@ export default function Page() {
 							caused by system malfunctions, maintenance activities, or
 							unforeseen technical issues.
 						</p>
-
-						<h3>禁止コンテンツ</h3>
-						<p>
-							Users are strictly prohibited from uploading any sensitive,
-							explicit, or illegal images. This includes, but is not limited to,
-							images containing nudity, violence, or any content that violates
-							applicable laws and regulations. Any violation of this policy may
-							result in the removal of the uploaded content and possible account
-							suspension.
-						</p>
-
 						<h3>Service Availability</h3>
 						<p>
 							As this service is managed by a student, it may be discontinued at

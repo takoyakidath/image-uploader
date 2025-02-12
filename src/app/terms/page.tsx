@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function Page() {
 	return (
 		<>
-			<Card>
+			<Card className="">
 				<Card>
 					<CardHeader>
 						<CardTitle>Terms of service</CardTitle>
