@@ -45,6 +45,17 @@ export function SiginupForm({
 								</div>
 								<Input id="password" type="password" required />
 							</div>
+							<div className="grid gap-2">
+								<div className="flex items-center">
+									<Label htmlFor="password">Invite Code</Label>
+								</div>
+								<Input
+									id="invite"
+									type="invite"
+									placeholder="xxx - xxx - xxx"
+									required
+								/>
+							</div>
 							<Button type="submit" className="w-full ">
 								signup
 							</Button>

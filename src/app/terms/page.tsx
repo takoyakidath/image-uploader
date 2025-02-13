@@ -23,14 +23,17 @@ export default function Page() {
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<h3>Data Security</h3>
+						<div className="flex-1 border-b border-gray-500" />
+						<h3 className="font-3xl">Data Security</h3>
+						<br />
 						<p>
 							We are not responsible for any data breaches involving personal
 							information, including but not limited to unauthorized access,
 							hacking, or unintended data exposure.
 						</p>
-
-						<h3>Image Management</h3>
+						<div className="flex-1 border-b border-gray-500" />
+						<h3 className="font-3xl">Image Management</h3>
+						<br />
 						<p>
 							We are not responsible for any leakage of images uploaded by
 							users, whether due to system vulnerabilities, third-party
@@ -39,8 +42,9 @@ export default function Page() {
 							caused by system malfunctions, maintenance activities, or
 							unforeseen technical issues.
 						</p>
-
-						<h3>Prohibited Content</h3>
+						<div className="flex-1 border-b border-gray-500" />
+						<h3 className="font-3xl">Prohibited Content</h3>
+						<br />
 						<p>
 							Users are strictly prohibited from uploading any sensitive,
 							explicit, or illegal images. This includes, but is not limited to,
@@ -49,14 +53,16 @@ export default function Page() {
 							result in the removal of the uploaded content and possible account
 							suspension.
 						</p>
-
-						<h3>Service Availability</h3>
+						<div className="flex-1 border-b border-gray-500" />
+						<h3 className="font-3xl">Service Availability</h3>
+						<br />
 						<p>
 							As this service is managed by a student, it may be discontinued at
 							any time due to financial, academic, or personal reasons. We bear
 							no responsibility for such termination or any resulting
 							inconvenience to users.
 						</p>
+						<div className="flex-1 border-b border-gray-500" />
 					</CardContent>
 					<CardFooter>
 						<p>Written by Takoyaki</p>
