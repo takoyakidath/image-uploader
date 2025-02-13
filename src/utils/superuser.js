@@ -1,8 +1,6 @@
 import PocketBase from "pocketbase";
 
-const superuserClient = new PocketBase(
-	"http://backend-pocketbase-a08a35-202-212-71-220.traefik.me/",
-);
+const superuserClient = new PocketBase(process.env.Application_URL);
 
 // disable autocancellation so that we can handle async requests from multiple users
 superuserClient.autoCancellation(false);
@@ -18,6 +16,6 @@ await superuserClient
 
 // option 2: OR authenticate as superuser via long-lived "API key"
 // (see https://pocketbase.io/docs/authentication/#api-keys)
-superuserClient.authStore.save("YOUR_GENERATED_SUPERUSER_TOKEN");
+superuserClient.authStore.save(process.env.SUPERUSER_TOKEN);
 
 export default superuserClient;
