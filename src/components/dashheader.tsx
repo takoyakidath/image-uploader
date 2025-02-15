@@ -1,4 +1,4 @@
-import ThemeToggle from "@/components/theme-toggle";
+import { ModeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
 export default function HeaderDath() {
 	return (
@@ -10,7 +10,7 @@ export default function HeaderDath() {
 						<Link href="/">ImageShare</Link>
 					</span>
 				</div>
-				<ThemeToggle />
+				<ModeToggle />
 			</nav>
 		</header>
 	);

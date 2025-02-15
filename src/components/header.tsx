@@ -1,4 +1,4 @@
-import ThemeToggle from "@/components/theme-toggle";
+import { ModeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -12,10 +12,12 @@ export default function Header() {
 						<Link href="/">ImageShare</Link>
 					</span>
 				</div>
-				<Button asChild>
-					<Link href="/login">ログイン</Link>
-				</Button>
-				<ThemeToggle />
+				<div>
+					<Button>
+						<Link href="/login">ログイン</Link>
+					</Button>
+					<ModeToggle />
+				</div>
 			</nav>
 		</header>
 	);
