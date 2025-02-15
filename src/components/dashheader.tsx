@@ -1,5 +1,5 @@
+import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
-
 export default function HeaderDath() {
 	return (
 		<header className="container mx-auto p-4">
@@ -10,6 +10,7 @@ export default function HeaderDath() {
 						<Link href="/">ImageShare</Link>
 					</span>
 				</div>
+				<ThemeToggle />
 			</nav>
 		</header>
 	);
