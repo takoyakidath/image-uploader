@@ -72,8 +72,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 								{item.items.map((item) => (
 									<SidebarMenuItem key={item.title}>
 										<SidebarMenuButton asChild isActive={item.id === "upload"}>
-											{" "}
-											{/*このitem.id === "upload"にidを入れればいいらしい*/}
 											<a href={item.url}>
 												{item.icon} {item.title}
 											</a>
@@ -89,3 +87,4 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 		</Sidebar>
 	);
 }
+//このitem.id === "upload"にidを入れればいいらしい
