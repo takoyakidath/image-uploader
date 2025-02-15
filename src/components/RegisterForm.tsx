@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-export function SiginupForm({
+export function RegisterForm({
 	className,
 	...props
 }: React.ComponentProps<"div">) {

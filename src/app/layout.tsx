@@ -1,5 +1,4 @@
 import "./globals.css";
-import { Footer } from "@/components/footer";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Image Uploader",
@@ -14,10 +13,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body>
-				{children}
-				<Footer />
-			</body>
+			<body>{children}</body>
 		</html>
 	);
 }

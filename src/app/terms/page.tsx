@@ -28,14 +28,14 @@ export default function Page() {
 							データセキュリティ
 						</h3>
 						<p className="text-gray-700 mt-2 leading-relaxed">
-							個人情報の不正アクセス、ハッキング、意図しないデータ露出などの
+							個人情報の不正アクセス、ハッキング、意図しないデータ流出などの
 							データ漏洩について、当サービスは一切の責任を負いません。
 						</p>
 
 						<div className="border-b border-gray-300 my-6" />
 						<h3 className="text-2xl font-bold text-gray-800">画像管理</h3>
 						<p className="text-gray-700 mt-2 leading-relaxed">
-							ユーザーがアップロードした画像の漏洩について、システムの脆弱性、
+							ユーザーが本サービスにアップロードした画像の漏洩について、システムの脆弱性、
 							第三者の干渉、または偶発的な開示による場合であっても、
 							当サービスは一切の責任を負いません。
 							<br />

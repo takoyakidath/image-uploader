@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,7 +9,6 @@ import {
 } from "@/components/ui/card";
 import { TypographyH1, TypographyP } from "@/components/ui/typography";
 import Link from "next/link";
-
 export default function Home() {
 	return (
 		<div className="min-h-screen bg-gradient-to-b from-gray-100 to-white dark:from-gray-900 dark:to-gray-800">
@@ -26,7 +26,7 @@ export default function Home() {
 
 				<div className="mb-12">
 					<Button asChild size="lg" className="text-lg px-8 py-3">
-						<Link href="/signup">今すぐ始める</Link>
+						<Link href="/register">今すぐ始める</Link>
 					</Button>
 				</div>
 
@@ -47,6 +47,7 @@ export default function Home() {
 						description="プライバシー設定を完全にコントロール。公開範囲を自由に設定できます。"
 					/>
 				</div>
+				<Footer />
 			</main>
 		</div>
 	);
