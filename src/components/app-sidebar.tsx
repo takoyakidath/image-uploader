@@ -12,9 +12,9 @@ import {
 	SidebarMenuItem,
 	SidebarRail,
 } from "@/components/ui/sidebar";
-import { GalleryVerticalEnd } from "lucide-react";
+import { Folder, House, Images, Upload } from "lucide-react";
 import Link from "next/link";
-// This is sample data.
+
 const data = {
 	navMain: [
 		{
@@ -24,14 +24,17 @@ const data = {
 				{
 					title: "Home",
 					url: "/dashboard",
+					icon: <House />,
 				},
 				{
 					title: "Upload",
 					url: "/dashboard/upload",
+					icon: <Upload />,
 				},
 				{
 					title: "gallery",
 					url: "/dashboard/gallery",
+					icon: <Images />,
 				},
 			],
 		},
@@ -47,7 +50,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 					className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
 				>
 					<div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-						<GalleryVerticalEnd className="size-4" />
+						<Folder className="size-4" bgcolor="red" />
 					</div>
 					<div className="flex flex-col gap-0.5 leading-none">
 						<span className="font-semibold">
@@ -66,7 +69,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 								{item.items.map((item) => (
 									<SidebarMenuItem key={item.title}>
 										<SidebarMenuButton asChild isActive={item.isActive}>
-											<a href={item.url}>{item.title}</a>
+											<a href={item.url}>
+												{item.icon} {item.title}
+											</a>
 										</SidebarMenuButton>
 									</SidebarMenuItem>
 								))}
