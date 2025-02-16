@@ -1,3 +1,4 @@
+import Gallerys from "@/components/gallerys";
 import { AppSidebar } from "@/components/sidebar";
 import {
 	Breadcrumb,
@@ -13,7 +14,6 @@ import {
 	SidebarProvider,
 	SidebarTrigger,
 } from "@/components/ui/sidebar";
-
 export default function gallery() {
 	return (
 		<SidebarProvider>
@@ -36,7 +36,11 @@ export default function gallery() {
 				</header>
 				<div className="flex flex-1 flex-col gap-4 p-4">
 					<div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
-						gallery
+						You are upload Images
+						<div className="flex flex-1 flex-col gap-4 p-4">
+							<Gallerys />
+							<div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+						</div>
 					</div>
 				</div>
 			</SidebarInset>

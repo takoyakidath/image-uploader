@@ -1,9 +1,9 @@
 import { Footer } from "@/components/footer";
+
 import {
 	Card,
 	CardContent,
 	CardDescription,
-	CardFooter,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";

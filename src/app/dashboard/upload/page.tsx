@@ -90,7 +90,7 @@ export default function Uploader() {
 									{preview ? (
 										<div className="relative">
 											<Image
-												src={preview || "/placeholder.svg"}
+												src={preview || "https://ui.shadcn.com/placeholder.svg"}
 												alt="Preview"
 												className="max-w-full h-auto rounded"
 												width={500}
