@@ -1,3 +1,4 @@
+"use client";
 import type * as React from "react";
 
 import {
@@ -14,6 +15,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Folder, House, Images, Upload } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const data = {
 	navMain: [
@@ -45,6 +47,7 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+	const pathname = usePathname();
 	return (
 		<Sidebar {...props}>
 			<SidebarHeader>
@@ -71,7 +74,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 							<SidebarMenu>
 								{item.items.map((item) => (
 									<SidebarMenuItem key={item.title}>
-										<SidebarMenuButton asChild isActive={item.id === "upload"}>
+										<SidebarMenuButton asChild isActive={item.url === pathname}>
 											<a href={item.url}>
 												{item.icon} {item.title}
 											</a>
