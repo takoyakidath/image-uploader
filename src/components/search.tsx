@@ -18,12 +18,12 @@ export default function Search() {
 				<CommandList>
 					<CommandEmpty>No results found.</CommandEmpty>
 					<CommandGroup heading="Suggestions">
-						<CommandItem>@ date</CommandItem>
+						<CommandItem>from:</CommandItem>
 					</CommandGroup>
 					<CommandSeparator />
-					<CommandGroup heading="Settings">
-						<CommandItem>Profile</CommandItem>
-						<CommandItem>Settings</CommandItem>
+					<CommandGroup heading="name">
+						<CommandItem>id</CommandItem>
+						<CommandItem>name</CommandItem>
 					</CommandGroup>
 				</CommandList>
 			</Command>
