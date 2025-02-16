@@ -1,70 +1,76 @@
 import { Footer } from "@/components/footer";
-import Header from "@/components/header";
+import { ModeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import {
-	Card,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
-import { TypographyH1, TypographyP } from "@/components/ui/typography";
+import { Camera, ExternalLink, Image, Upload } from "lucide-react";
 import Link from "next/link";
-export default function Home() {
+
+export default function HomePage() {
 	return (
-		<div className="min-h-screen bg-gradient-to-b from-gray-100 to-white dark:from-gray-900 dark:to-gray-800">
-			<Header />
-			<main className="container mx-auto px-4 py-12 text-center">
-				<TypographyH1 className="mb-6 text-primary">
-					画像共有の新しいカタチ
-				</TypographyH1>
+		<div className="flex flex-col min-h-screen">
+			<header className="p-4 flex justify-between items-center">
+				<Link href="/" className="flex items-center space-x-2 text-primary">
+					<Camera className="h-8 w-8" />
+					<span className="text-2xl font-bold tracking-tight">
+						ImageUploader
+					</span>
+				</Link>
+				<div className="flex items-center space-x-4">
+					<Link href="/login">
+						<Button variant="ghost">Login</Button>
+					</Link>
+					<ModeToggle />
+				</div>
+			</header>
 
-				<TypographyP className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
-					あなたの思い出や創造性を世界中と共有しましょう。
-					高品質な画像アップロード、簡単な共有機能、
-					そしてインスピレーションを得られるコミュニティがあなたを待っています。
-				</TypographyP>
+			<main className="flex-grow flex flex-col items-center justify-center space-y-12 px-4 py-12">
+				<section className="text-center space-y-4 max-w-2xl">
+					<h2 className="text-4xl font-bold">Welcome to ImageUploader</h2>
+					<p className="text-xl text-muted-foreground">
+						The easiest way to upload, manage, and share your images online.
+					</p>
+				</section>
 
-				<div className="mb-12">
-					<Button asChild size="lg" className="text-lg px-8 py-3">
-						<Link href="/register">今すぐ始める</Link>
+				<section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<FeatureCard
+						icon={<Upload className="h-12 w-12" />}
+						title="Easy Upload"
+						description="Drag and drop or click to upload your images in seconds."
+					/>
+					<FeatureCard
+						icon={<Image className="h-12 w-12" />}
+						title="Image Management"
+						description="manage your images with powerful tools."
+					/>
+					<FeatureCard
+						icon={<ExternalLink className="h-12 w-12" />}
+						title="Instant Sharing"
+						description="Share your images with anyone, anywhere, anytime."
+					/>
+				</section>
+				<Link href="/register">
+					<Button size="lg" className="px-8 py-6 text-lg">
+						Register
 					</Button>
-				</div>
-
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-					<FeatureCard
-						icon="📸"
-						title="簡単アップロード"
-						description="ドラッグ＆ドロップで簡単に画像をアップロード。複数の画像も一度に処理できます。"
-					/>
-					<FeatureCard
-						icon="🖼️"
-						title="美しいギャラリー"
-						description="あなたの作品を最高の形で展示。レスポンシブデザインで、どのデバイスでも美しく表示されます。"
-					/>
-					<FeatureCard
-						icon="🔒"
-						title="安全な共有"
-						description="プライバシー設定を完全にコントロール。公開範囲を自由に設定できます。"
-					/>
-				</div>
-				<Footer />
+				</Link>
 			</main>
+
+			<Footer />
 		</div>
 	);
 }
 
-function FeatureCard({
-	icon,
-	title,
-	description,
-}: { icon: string; title: string; description: string }) {
+interface FeatureCardProps {
+	icon: React.ReactNode; // アイコンの型
+	title: string; // タイトルの型
+	description: string; // 説明の型
+}
+
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
 	return (
-		<Card>
-			<CardHeader>
-				<div className="text-4xl mb-2">{icon}</div>
-				<CardTitle>{title}</CardTitle>
-				<CardDescription>{description}</CardDescription>
-			</CardHeader>
-		</Card>
+		<div className="flex flex-col items-center text-center p-6 bg-card rounded-lg shadow-sm">
+			{icon}
+			<h2 className="text-lg font-semibold">{title}</h2>
+			<p className="text-sm">{description}</p>
+		</div>
 	);
 }
