@@ -1,27 +1,13 @@
 import { Footer } from "@/components/footer";
-import { ModeToggle } from "@/components/theme-toggle";
+import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
-import { Camera, ExternalLink, Image, Upload } from "lucide-react";
+import { ExternalLink, Image, Upload } from "lucide-react";
 import Link from "next/link";
 
 export default function HomePage() {
 	return (
 		<div className="flex flex-col min-h-screen">
-			<header className="p-4 flex justify-between items-center">
-				<Link href="/" className="flex items-center space-x-2 text-primary">
-					<Camera className="h-8 w-8" />
-					<span className="text-2xl font-bold tracking-tight">
-						ImageUploader
-					</span>
-				</Link>
-				<div className="flex items-center space-x-4">
-					<Link href="/login">
-						<Button variant="ghost">Login</Button>
-					</Link>
-					<ModeToggle />
-				</div>
-			</header>
-
+			<Header />
 			<main className="flex-grow flex flex-col items-center justify-center space-y-12 px-4 py-12">
 				<section className="text-center space-y-4 max-w-2xl">
 					<h2 className="text-4xl font-bold">Welcome to ImageUploader</h2>
