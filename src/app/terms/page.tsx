@@ -64,6 +64,16 @@ export default function Page() {
 						一切の責任を負いません。
 					</p>
 					<div className="border-b border-gray-300 my-6" />
+					<h3 className="text-2xl font-bold ">
+						サービス提供の継続性に関する免責事項
+					</h3>
+					<p className="mt-2 leading-relaxed">
+						本サービスはGoogle
+						Workspaceをデータベースに使用しているため、提供者の都合や予期せぬ事情により、いついかなる時でも予告なく終了する場合があります。
+						<br />
+						利用者はこれを了承の上、ご利用ください。当サービスの終了により生じた損害について、提供者は一切の責任を負いません。
+					</p>
+					<div className="border-b border-gray-300 my-6" />
 				</CardContent>
 			</Card>
 			<Footer />
