@@ -15,6 +15,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
+			<meta property="og:image" content="@/app/public/ogp/image-uploader.png" />
+			<meta property="og:image:alt" content="image uploader" />
+			<meta property="og:image:type" content="image/png" />
+			<meta property="og:image:width" content="1200" />
+			<meta property="og:image:height" content="630" />
 			<body>
 				<ThemeProvider
 					attribute="class"
