@@ -8,7 +8,7 @@ export default function HomePage() {
 	return (
 		<div className="flex flex-col min-h-screen">
 			<Header />
-			<main className="flex-grow flex flex-col items-center justify-center space-y-12 px-4 py-12">
+			<main className="grow flex flex-col items-center justify-center space-y-12 px-4 py-12">
 				<section className="text-center space-y-4 max-w-2xl">
 					<h2 className="text-4xl font-bold">Welcome to ImageUploader</h2>
 					<p className="text-xl text-muted-foreground">
@@ -53,7 +53,7 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
 	return (
-		<div className="flex flex-col items-center text-center p-6 bg-card rounded-lg shadow-sm">
+		<div className="flex flex-col items-center text-center p-6 bg-card rounded-lg shadow-xs">
 			{icon}
 			<h2 className="text-lg font-semibold">{title}</h2>
 			<p className="text-sm">{description}</p>
