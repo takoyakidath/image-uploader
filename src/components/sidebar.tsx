@@ -1,9 +1,9 @@
 "use client";
-import type * as React from "react";
-
+import { NavUser } from "@/components/nav-user";
 import {
 	Sidebar,
 	SidebarContent,
+	SidebarFooter,
 	SidebarGroup,
 	SidebarGroupContent,
 	SidebarGroupLabel,
@@ -16,8 +16,14 @@ import {
 import { Folder, House, Images, Upload } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type * as React from "react";
 
 const data = {
+	user: {
+		name: "shadcn",
+		email: "m@example.com",
+		avatar: "/avatars/shadcn.jpg",
+	},
 	navMain: [
 		{
 			title: "",
@@ -87,7 +93,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 				))}
 			</SidebarContent>
 			<SidebarRail />
+			<SidebarFooter>
+				<NavUser user={data.user} />
+			</SidebarFooter>
 		</Sidebar>
 	);
 }
-//このitem.id === "upload"にidを入れればいいらしい

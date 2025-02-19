@@ -1,5 +1,4 @@
 "use client";
-
 import {
 	BadgeCheck,
 	Bell,
@@ -8,6 +7,7 @@ import {
 	LogOut,
 	Sparkles,
 } from "lucide-react";
+import Link from "next/link";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -44,7 +44,7 @@ export function NavUser({
 					<DropdownMenuTrigger asChild>
 						<SidebarMenuButton
 							size="lg"
-							className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+							className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground md:h-8 md:p-0"
 						>
 							<Avatar className="h-8 w-8 rounded-lg">
 								<AvatarImage src={user.avatar} alt={user.name} />
@@ -58,7 +58,7 @@ export function NavUser({
 						</SidebarMenuButton>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent
-						className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
+						className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
 						side={isMobile ? "bottom" : "right"}
 						align="end"
 						sideOffset={4}
@@ -86,7 +86,7 @@ export function NavUser({
 						<DropdownMenuGroup>
 							<DropdownMenuItem>
 								<BadgeCheck />
-								Account
+								<Link href="/dashboard/accounts">Account</Link>
 							</DropdownMenuItem>
 							<DropdownMenuItem>
 								<CreditCard />
