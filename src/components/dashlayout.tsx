@@ -36,6 +36,12 @@ const data = {
 					url: "/dashboard/gallery",
 					page: "gallery",
 				},
+				{
+					title: "Accounts",
+					id: "accounts",
+					url: "/dashboard/accounts",
+					page: "accounts",
+				},
 			],
 		},
 	],
