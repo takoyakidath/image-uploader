@@ -2,7 +2,7 @@ import Gallerys from "@/components/gallerys";
 import Search from "@/components/search";
 export default function Page() {
 	const totalimages = "10k";
-	const totalsize = "90pb";
+	const totalsize = "90PB";
 	const totalusers = "10k";
 	return (
 		<div>
@@ -11,26 +11,27 @@ export default function Page() {
 				<div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
 					<div className="grid auto-rows-min gap-4 md:grid-cols-3">
 						<div className="aspect-video rounded-sm bg-muted/50">
-							<div className="text-6xl">
+							<div className="text-4xl">
 								total Images : <br />
-								<div className="text-9xl">{totalimages}</div>
+								<span className="text-6xl">{totalimages}</span>
 							</div>
 						</div>
 						<div className="aspect-video rounded-sm bg-muted/50">
-							<div className="text-6xl">
-								total size : <br /> <div className="text-9xl">{totalsize}</div>
+							<div className="text-4xl">
+								total size : <br />
+								<span className="text-6xl">{totalsize}</span>
 							</div>
 						</div>
 						<div className="aspect-video rounded-sm bg-muted/50">
-							<div className="text-6xl">
-								total users : <br />{" "}
-								<div className="text-9xl">{totalusers}</div>
+							<div className="text-4xl">
+								total users : <br />
+								<span className="text-6xl">{totalusers}</span>
 							</div>
 						</div>
 					</div>
 					<div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
 				</div>
-				<div className="text-6xl">Recently uploaded</div>
+				<div className="text-3xl">Recently uploaded</div>
 				{/* Add overflow-auto to make the gallery scrollable */}
 				<div className="overflow-auto max-h-[50vh]">
 					<Gallerys />
