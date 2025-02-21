@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 import { Upload, X } from "lucide-react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
