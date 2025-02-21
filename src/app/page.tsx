@@ -23,6 +23,7 @@ export default function HomePage() {
 						description="Drag and drop or click to upload your images in seconds."
 					/>
 					<FeatureCard
+						// eslint-disable-next-line jsx-a11y/alt-text
 						icon={<Image className="h-12 w-12" />}
 						title="Image Management"
 						description="manage your images with powerful tools."

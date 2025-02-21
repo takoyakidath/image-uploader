@@ -1,9 +1,11 @@
+import { signup } from "@/components/actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+
 export function RegisterForm({
 	className,
 	...props
@@ -36,6 +38,7 @@ export function RegisterForm({
 									id="email"
 									type="email"
 									placeholder="m@example.com"
+									name="email"
 									required
 								/>
 							</div>
@@ -43,7 +46,7 @@ export function RegisterForm({
 								<div className="flex items-center">
 									<Label htmlFor="password">Password</Label>
 								</div>
-								<Input id="password" type="password" required />
+								<Input id="password" type="password" name="password" required />
 							</div>
 							<div className="grid gap-2">
 								<div className="flex items-center">
@@ -56,8 +59,8 @@ export function RegisterForm({
 									required
 								/>
 							</div>
-							<Button type="submit" className="w-full ">
-								signup
+							<Button type="submit" formAction={signup} className="w-full ">
+								register
 							</Button>
 
 							<div className="text-center text-sm">

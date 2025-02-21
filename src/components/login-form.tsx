@@ -1,9 +1,11 @@
+import { login } from "@/components/actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+
 export function LoginForm({
 	className,
 	...props
@@ -26,6 +28,7 @@ export function LoginForm({
 									id="email"
 									type="email"
 									placeholder="m@example.com"
+									name="email"
 									required
 								/>
 							</div>
@@ -39,9 +42,9 @@ export function LoginForm({
 										Forgot your password?
 									</a>
 								</div>
-								<Input id="password" type="password" required />
+								<Input id="password" type="password" name="password" required />
 							</div>
-							<Button type="submit" className="w-full">
+							<Button type="submit" formAction={login} className="w-full">
 								Login
 							</Button>
 

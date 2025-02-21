@@ -39,7 +39,7 @@ export default function Accounts() {
 	};
 
 	return (
-		<div className="container max-w-2xl mx-auto py-10">
+		<div className="">
 			<form onSubmit={handleSubmit}>
 				<Card className="mb-6">
 					<CardHeader>
