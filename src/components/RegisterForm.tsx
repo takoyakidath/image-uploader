@@ -50,13 +50,12 @@ export function RegisterForm({
 							</div>
 							<div className="grid gap-2">
 								<div className="flex items-center">
-									<Label htmlFor="password">Invite Code</Label>
+									<Label htmlFor="invite">Invite Code</Label>
 								</div>
 								<Input
 									id="invite"
 									type="invite"
 									placeholder="xxx - xxx - xxx"
-									required
 								/>
 							</div>
 							<Button type="submit" formAction={signup} className="w-full ">
