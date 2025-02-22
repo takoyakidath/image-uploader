@@ -1,51 +1,41 @@
-name: Automated npm update
+name: Check npm packages version on the first day of the month
 
 on:
   schedule:
-    - cron: "0 0 * * 1"
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pull-requests: write
+    - cron: "0 0 1 * *"
 
 jobs:
-  npm-update:
-    env:
-      pr_title: "[Automated] Update NPM dependencies"
-
+  check-npm-version:
+    name: Check npm packages version
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ".node-version"
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Update packages
-        run: npm update
-
-      - name: Check for changes
-        id: git-check
+      - name: Setup Node.js
         run: |
-          git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+          npm install
 
-      - name: Create Pull Request
-        if: ${{ steps.git-check.outputs.changes == 'true' }}
-        uses: peter-evans/create-pull-request@v5
+      - name: Check if there is outdated packages and set an environment variable
+        id: outdated-check
+        run: |
+          if [ "$(npm outdated --json || echo '{}')" != "{}" ]; then
+            echo "Outdated packages found."
+            echo "outdated=true" >> $GITHUB_ENV
+          else
+            echo "No outdated packages." && exit 0
+          fi
+
+      - name: Create GitHub issue body as a markdown file
+        if: env.outdated == 'true'
+        run: |
+          echo "| Package | Current Version | Latest Version |" > issue_body.md
+          echo "|---------|-----------------|----------------|" >> issue_body.md
+          npm outdated --json || echo "{}" | jq -r '. | to_entries | .[] | "| \(.key) | \(.value.current) | \(.value.latest) |"' >> issue_body.md
+
+      - name: Create GitHub issue
+        if: env.outdated == 'true'
+        uses: peter-evans/create-issue-from-file@v4
         with:
-          token: ${{ secrets.BOT_TOKEN }}
-          base: develop
-          add-paths: package-lock.json
-          commit-message: Update npm dependencies
-          title: ${{ env.pr_title }}
-          body: "Automated changes by GitHub Actions"
-          branch: automated-npm-update
-          delete-branch: true
+          title: "新しいバージョンのパッケージに更新してください"
+          content-filepath: ./issue_body.md
