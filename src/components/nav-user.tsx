@@ -1,8 +1,7 @@
 "use client";
-import { BadgeCheck, ChevronsUpDown, LogOut } from "lucide-react";
-import Link from "next/link";
-
+import { signOutAction } from "@/components/actions";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -18,7 +17,8 @@ import {
 	SidebarMenuItem,
 	useSidebar,
 } from "@/components/ui/sidebar";
-
+import { BadgeCheck, ChevronsUpDown, LogOut } from "lucide-react";
+import Link from "next/link";
 export function NavUser({
 	user,
 }: {
@@ -78,10 +78,14 @@ export function NavUser({
 							</DropdownMenuGroup>
 						</Link>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem>
-							<LogOut />
-							Log out
-						</DropdownMenuItem>
+						<form action={signOutAction}>
+							<button type="submit">
+								<DropdownMenuItem>
+									<LogOut />
+									Logout
+								</DropdownMenuItem>
+							</button>
+						</form>
 					</DropdownMenuContent>
 				</DropdownMenu>
 			</SidebarMenuItem>
