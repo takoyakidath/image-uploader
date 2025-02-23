@@ -54,8 +54,11 @@ export function RegisterForm({
 								</div>
 								<Input
 									id="invite"
-									type="invite"
-									placeholder="xxx - xxx - xxx"
+									type="text"
+									pattern="\d{3}\d{3}\d{3}"
+									placeholder="xxxxxxxxx"
+									required
+									maxLength={11}
 								/>
 							</div>
 							<Button type="submit" formAction={signup} className="w-full ">
