@@ -1,8 +1,8 @@
+import { forgotPasswordAction } from "@/components/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-
 export default function ForgotPassword() {
 	return (
 		<div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 py-12 px-4 dark:bg-gray-950">
@@ -30,7 +30,11 @@ export default function ForgotPassword() {
 							placeholder="Email address"
 						/>
 					</div>
-					<Button type="submit" className="w-full">
+					<Button
+						type="submit"
+						className="w-full"
+						formAction={forgotPasswordAction}
+					>
 						Reset password
 					</Button>
 				</form>
