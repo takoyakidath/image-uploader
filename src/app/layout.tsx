@@ -1,7 +1,7 @@
 import "./globals.css";
+import Hello from "@/components/Hello";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
-
 export const metadata: Metadata = {
 	title: "Image Uploader",
 	description: "The Image Uploader",
@@ -27,6 +27,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
+					<Hello />
 					{children}
 				</ThemeProvider>
 			</body>
