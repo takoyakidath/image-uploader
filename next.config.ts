@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+import nextPWA from "next-pwa";
 
-const nextConfig: NextConfig = {
-	/* config options here */
+const withPWA = nextPWA({
+	dest: "public",
+	register: true,
+	skipWaiting: true,
+});
+
+const nextConfig = withPWA({
+	reactStrictMode: true,
 	output: "standalone",
 	eslint: {
 		ignoreDuringBuilds: true,
@@ -9,6 +15,6 @@ const nextConfig: NextConfig = {
 	images: {
 		domains: ["ui.shadcn.com"],
 	},
-};
+});
 
 export default nextConfig;
