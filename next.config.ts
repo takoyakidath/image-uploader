@@ -1,20 +1,21 @@
-import nextPWA from "next-pwa";
+import withPWA from "next-pwa";
 
-const withPWA = nextPWA({
-	dest: "public",
-	register: true,
-	skipWaiting: true,
-});
-
-const nextConfig = withPWA({
+const nextConfig = {
 	reactStrictMode: true,
+	...withPWA({
+		dest: "public",
+		register: true,
+		skipWaiting: true,
+	}),
+
 	output: "standalone",
+
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
 	images: {
 		domains: ["ui.shadcn.com"],
 	},
-});
+};
 
 export default nextConfig;
