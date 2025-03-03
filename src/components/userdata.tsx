@@ -5,5 +5,6 @@ export default function Userdata() {
 		name: "sample",
 		email: "m@sample.com",
 		avatar: "/avatars/shadcn.jpg",
+		fallback: "AI",
 	};
 }
