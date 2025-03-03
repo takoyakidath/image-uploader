@@ -14,13 +14,16 @@ import {
 import { Icons } from "@/components/ui/icons";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Userdata from "@/components/userdata";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
 export default function Accounts() {
-	const [username, setUsername] = useState("example");
-	const [email, setEmail] = useState("example@example.com");
-	const [password, setPassword] = useState("");
+	const data = {
+		user: Userdata(),
+	};
+	const [username, setUsername] = useState(data.user.name || "");
+	const [email, setEmail] = useState(data.user.email || "");
 	const [isLoading, setIsLoading] = useState(false);
 	const { toast } = useToast();
 
@@ -73,8 +76,6 @@ export default function Accounts() {
 							<Input
 								id="password"
 								type="password"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
 								placeholder="Enter your new password"
 							/>
 						</div>

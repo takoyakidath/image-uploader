@@ -1,5 +1,5 @@
 "use client";
-import { NavUser } from "@/components/nav-user";
+
 import {
 	Sidebar,
 	SidebarContent,
@@ -13,17 +13,12 @@ import {
 	SidebarMenuItem,
 	SidebarRail,
 } from "@/components/ui/sidebar";
+import User from "@/components/user";
 import { Folder, House, Images, Upload } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type * as React from "react";
-
 const data = {
-	user: {
-		name: "shadcn",
-		email: "m@example.com",
-		avatar: "/avatars/shadcn.jpg",
-	},
 	navMain: [
 		{
 			title: "",
@@ -94,7 +89,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			</SidebarContent>
 			<SidebarRail />
 			<SidebarFooter>
-				<NavUser user={data.user} />
+				<User />
 			</SidebarFooter>
 		</Sidebar>
 	);
