@@ -49,7 +49,7 @@ export default function Accounts() {
 					</CardContent>
 					<CardFooter>
 						<Button type="submit" className="w-full">
-							Sumbit
+							Submit
 						</Button>
 					</CardFooter>
 				</Card>
