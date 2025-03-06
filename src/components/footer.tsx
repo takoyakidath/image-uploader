@@ -23,10 +23,10 @@ export function Footer() {
 						<ul className="space-y-2">
 							<li>
 								<a
-									href="mailto:takoyaki@pkopko.jp"
+									href="mailto:info@image.pkopko.jp"
 									className="text-muted-foreground hover:text-primary"
 								>
-									takoyaki@pkopko.jp
+									info@image.pkopko.jp
 								</a>
 							</li>
 						</ul>
