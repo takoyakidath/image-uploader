@@ -3,6 +3,10 @@ name: Check npm packages version on the first day of the month
 on:
   schedule:
     - cron: "0 0 1 * *"
+    - push:
+    branches: [ "main" ]
+    - pull_request:
+    branches: [ "main" ]
 
 jobs:
   check-npm-version:
