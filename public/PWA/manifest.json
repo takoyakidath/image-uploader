@@ -1,1 +1,26 @@
-{"theme_color":"#1e2939","background_color":"#1e2939","icons":[{"purpose":"maskable","sizes":"512x512","src":"icon512_maskable.png","type":"image/png"},{"purpose":"any","sizes":"512x512","src":"icon512_rounded.png","type":"image/png"}],"orientation":"any","display":"standalone","dir":"auto","lang":"ja","name":"image-uploader","short_name":"image-uploader","start_url":"https://image.pkopko.jp","scope":"https://image.pkopko.jp/dashboard/"}
+{
+  "theme_color": "#1e2939",
+  "background_color": "#1e2939",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "ja",
+  "name": "image-uploader",
+  "short_name": "image-uploader",
+  "start_url": "https://image.pkopko.jp/dashboard/",
+  "scope": "https://image.pkopko.jp/dashboard/"
+}

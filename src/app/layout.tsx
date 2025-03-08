@@ -30,7 +30,7 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<link rel="manifest" href="/PWA/manifest.json" />
 			<link rel="apple-touch-icon" href="/PWA/icon.png" />
-			<meta name="theme-color" content="#b8e986" />
+			<meta name="theme-color" content="#1e2939" />
 			<meta property="og:image" content="/ogp/image-uploader.png" />
 			<meta property="og:image:alt" content="image uploader" />
 			<meta property="og:image:type" content="image/png" />
