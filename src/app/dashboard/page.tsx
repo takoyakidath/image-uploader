@@ -33,14 +33,26 @@ function formatNumber(num: number) {
 	return Math.round(formattedNum) + units[unitIndex];
 }
 
-function convertBase12ToBase10(base12Num: string): number {
-	return Number.parseInt(base12Num, 12);
+function convertToDecimalUnits(bytes: number): string {
+	// バイト数を1024単位基準に変換
+	const units = ["B", "KB", "MB", "GB", "TB", "PB", "EB"];
+	let index = 0;
+
+	// 1024単位で繰り返して単位を上げていく
+	let size = bytes;
+	while (size >= 1024 && index < units.length - 1) {
+		size /= 1024;
+		index++;
+	}
+	// 小数点以下が0の場合は整数として表示
+	return size % 1 === 0
+		? `${size} ${units[index]}`
+		: `${size.toFixed(2)} ${units[index]}`;
 }
 
 export default function Page() {
-	const totalimages = 10240;
-	const totalsizeBase12 = "101330991615836160";
-	const totalsize = convertBase12ToBase10(totalsizeBase12);
+	const totalimages = 10000;
+	const bytes = 101330991615836160;
 	const currentrank = 1;
 	return (
 		<div>
@@ -73,7 +85,7 @@ export default function Page() {
 							</CardHeader>
 							<CardContent>
 								<div className="text-2xl font-bold">
-									{formatNumber(totalsize)}b
+									{convertToDecimalUnits(bytes)}
 								</div>
 								<p className="text-xs text-muted-foreground">
 									Your storage used
