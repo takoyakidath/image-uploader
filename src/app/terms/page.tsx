@@ -1,4 +1,3 @@
-import { Footer } from "@/components/footer";
 import {
 	Card,
 	CardContent,
@@ -10,14 +9,14 @@ import Link from "next/link";
 
 export default function Page() {
 	return (
-		<div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 py-12">
+		<div className="min-h-screen bg-gradient-to-b  to-slate-100 py-12">
 			<div className="container max-w-3xl mx-auto px-4">
 				<Card className="border-none shadow-lg mb-8">
 					<CardHeader className="text-center border-b pb-6">
 						<CardTitle className="text-3xl font-bold mb-4">
 							Terms of service
 						</CardTitle>
-						<div className="h-1 w-20 bg-primary mx-auto mb-4"></div>
+						<div className="h-1 w-20 bg-primary mx-auto mb-4" />
 						<CardDescription>Last Modified: 11 Feb 2025</CardDescription>
 						<CardDescription>
 							Previous Version:{" "}
@@ -31,10 +30,10 @@ export default function Page() {
 					</CardHeader>
 					<CardContent className="pt-8">
 						<div className="space-y-8">
-							{sections.map((section, index) => (
+							{sections.map((section) => (
 								<section
-									key={index}
-									className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+									key={section.title}
+									className=" rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
 								>
 									<h2 className="text-xl font-semibold mb-6 text-center border-b pb-3">
 										{section.title}
@@ -45,8 +44,11 @@ export default function Page() {
 										</p>
 									) : (
 										<ol className="list-decimal pl-8 space-y-3 text-muted-foreground">
-											{section.items.map((item, itemIndex) => (
-												<li key={itemIndex} className="pl-2">
+											{section.items?.map((item) => (
+												<li
+													key={typeof item === "string" ? item : item.text}
+													className="pl-2"
+												>
 													{typeof item === "string" ? (
 														<p>{item}</p>
 													) : (
@@ -54,8 +56,8 @@ export default function Page() {
 															<p>{item.text}</p>
 															{item.subItems && (
 																<ul className="list-disc pl-5 mt-2 space-y-1">
-																	{item.subItems.map((subItem, subIndex) => (
-																		<li key={subIndex}>{subItem}</li>
+																	{item.subItems.map((subItem) => (
+																		<li key={subItem}>{subItem}</li>
 																	))}
 																</ul>
 															)}
@@ -74,7 +76,6 @@ export default function Page() {
 						</div>
 					</CardContent>
 				</Card>
-				<Footer />
 			</div>
 		</div>
 	);
