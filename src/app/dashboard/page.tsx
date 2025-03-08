@@ -33,13 +33,13 @@ function formatNumber(num: number) {
 	return Math.round(formattedNum) + units[unitIndex];
 }
 
-function convertToDecimalUnits(bytes: number): string {
+function convertToDecimalUnits(totalbytes: number): string {
 	// バイト数を1024単位基準に変換
 	const units = ["B", "KB", "MB", "GB", "TB", "PB", "EB"];
 	let index = 0;
 
 	// 1024単位で繰り返して単位を上げていく
-	let size = bytes;
+	let size = totalbytes;
 	while (size >= 1024 && index < units.length - 1) {
 		size /= 1024;
 		index++;
@@ -52,7 +52,7 @@ function convertToDecimalUnits(bytes: number): string {
 
 export default function Page() {
 	const totalimages = 10000;
-	const bytes = 101330991615836160;
+	const totalbytes = 101330991615836160;
 	const currentrank = 1;
 	return (
 		<div>
@@ -85,7 +85,7 @@ export default function Page() {
 							</CardHeader>
 							<CardContent>
 								<div className="text-2xl font-bold">
-									{convertToDecimalUnits(bytes)}
+									{convertToDecimalUnits(totalbytes)}
 								</div>
 								<p className="text-xs text-muted-foreground">
 									Your storage used
