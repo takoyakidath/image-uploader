@@ -19,6 +19,7 @@ function formatNumber(num: number) {
 		"E",
 		"Z",
 		"Y",
+		"B",
 	];
 	const exponent = Math.floor(Math.log10(Math.abs(num)));
 
@@ -35,7 +36,7 @@ function formatNumber(num: number) {
 
 function convertToDecimalUnits(totalbytes: number): string {
 	// バイト数を1024単位基準に変換
-	const units = ["B", "KB", "MB", "GB", "TB", "PB", "EB"];
+	const units = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB", "BB"];
 	let index = 0;
 
 	// 1024単位で繰り返して単位を上げていく
