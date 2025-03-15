@@ -48,7 +48,19 @@ export function RegisterForm({
 								</div>
 								<Input id="password" type="password" name="password" required />
 							</div>
-
+							<div className="grid gap-2">
+								<div className="flex items-center">
+									<Label htmlFor="invite">Invite Code</Label>
+								</div>
+								<Input
+									id="invite"
+									type="text"
+									pattern="\d{3}\d{3}\d{3}"
+									placeholder="xxxxxxxxx"
+									required
+									maxLength={11}
+								/>{" "}
+							</div>
 							<Button type="submit" formAction={signup} className="w-full ">
 								register
 							</Button>

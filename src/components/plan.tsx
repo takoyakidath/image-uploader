@@ -16,22 +16,18 @@ export default function PlanScreen() {
 			<div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
 				<Card className="border-2">
 					<CardHeader>
-						<CardTitle className="text-xl">一般</CardTitle>
-						<CardDescription>一般ユーザー向け</CardDescription>
+						<CardTitle className="text-xl">General</CardTitle>
+						<CardDescription>For general users</CardDescription>
 					</CardHeader>
 					<CardContent>
 						<ul className="mt-4 space-y-2">
 							<li className="flex items-start">
 								<Check className="h-5 w-5 text-primary mr-2 mt-0.5" />
-								<span>10GBまでのストレージ</span>
+								<span>Up to 10 GB storage</span>
 							</li>
 							<li className="flex items-start">
 								<Check className="h-5 w-5 text-primary mr-2 mt-0.5" />
-								<span>基本機能へのアクセス</span>
-							</li>
-							<li className="flex items-start">
-								<Check className="h-5 w-5 text-primary mr-2 mt-0.5" />
-								<span>優先サポート</span>
+								<span>Access to basic functions</span>
 							</li>
 						</ul>
 					</CardContent>
@@ -39,24 +35,26 @@ export default function PlanScreen() {
 
 				<Card className="border-2 ">
 					<CardHeader>
-						<CardTitle className="text-xl">学園生</CardTitle>
-						<CardDescription>N高グループ向け</CardDescription>
+						<CardTitle className="text-xl">Student</CardTitle>
+						<CardDescription>For N High School Group</CardDescription>
 					</CardHeader>
 					<CardContent>
 						<ul className="mt-4 space-y-2">
 							<li className="flex items-start">
 								<Check className="h-5 w-5 text-primary mr-2 mt-0.5" />
-								<span>無制限のストレージ</span>
+								<span>Unlimited Storage</span>
 							</li>
 
 							<li className="flex items-start">
 								<Check className="h-5 w-5 text-primary mr-2 mt-0.5" />
-								<span>すべての機能にアクセス</span>
+								<span>Access to all functions</span>
 							</li>
 
 							<li className="flex items-start">
 								<Check className="h-5 w-5 text-primary mr-2 mt-0.5" />
-								<span>学園のメアドで登録することが必須</span>
+								<span>
+									Must register with the school&apos;s e-mail address.
+								</span>
 							</li>
 						</ul>
 					</CardContent>
