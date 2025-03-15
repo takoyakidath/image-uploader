@@ -1,53 +1,35 @@
+import { FormMessage, type Message } from "@/components/FormMessage";
 import { forgotPasswordAction } from "@/components/actions";
-import { Button } from "@/components/ui/button";
+import { SubmitButton } from "@/components/submit-button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-export default function ForgotPassword() {
+
+export default async function ForgotPassword(props: {
+	searchParams: Promise<Message>;
+}) {
+	const searchParams = await props.searchParams;
 	return (
-		<div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 py-12 px-4 dark:bg-gray-950">
-			<div className="mx-auto w-full max-w-md space-y-8">
+		<>
+			<form className="flex-1 flex flex-col w-full gap-2 text-foreground [&>input]:mb-6 min-w-64 max-w-64 mx-auto">
 				<div>
-					<h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
-						Forgot your password?
-					</h2>
-					<p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
-						Enter the email address associated with your account and we&apos;ll
-						send you a link to reset your password.
+					<h1 className="text-2xl font-medium">Reset Password</h1>
+					<p className="text-sm text-secondary-foreground">
+						Already have an account?{" "}
+						<Link className="text-primary underline" href="/sign-in">
+							Sign in
+						</Link>
 					</p>
 				</div>
-				<form className="space-y-6" action="#" method="POST">
-					<div>
-						<Label htmlFor="email" className="sr-only">
-							Email address
-						</Label>
-						<Input
-							id="email"
-							name="email"
-							type="email"
-							autoComplete="email"
-							required
-							placeholder="Email address"
-						/>
-					</div>
-					<Button
-						type="submit"
-						className="w-full"
-						formAction={forgotPasswordAction}
-					>
-						Reset password
-					</Button>
-				</form>
-				<div className="flex justify-center">
-					<Link
-						href="/login"
-						className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-						prefetch={false}
-					>
-						Back to login
-					</Link>
+				<div className="flex flex-col gap-2 [&>input]:mb-3 mt-8">
+					<Label htmlFor="email">Email</Label>
+					<Input name="email" placeholder="exmaple@example.com" required />
+					<SubmitButton formAction={forgotPasswordAction}>
+						Reset Password
+					</SubmitButton>
+					<FormMessage message={searchParams} />
 				</div>
-			</div>
-		</div>
+			</form>
+		</>
 	);
 }

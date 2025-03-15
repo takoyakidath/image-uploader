@@ -1,9 +1,9 @@
 import { Footer } from "@/components/footer";
 import Header from "@/components/header";
+import PlanScreen from "@/components/plan";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Image, Upload } from "lucide-react";
 import Link from "next/link";
-
 export default function HomePage() {
 	return (
 		<div className="flex flex-col min-h-screen">
@@ -39,6 +39,7 @@ export default function HomePage() {
 						Register
 					</Button>
 				</Link>
+				<PlanScreen />
 			</main>
 
 			<Footer />
