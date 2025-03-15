@@ -4,6 +4,6 @@ export async function GET(
 	req: NextRequest,
 	{ params }: { params: { uid: string; imageid: string } },
 ) {
-	const { uid, imageid } = params;
+	const { uid, imageid } = await params;
 	return NextResponse.json({ message: `UID: ${uid}, ImageID: ${imageid}` });
 }
